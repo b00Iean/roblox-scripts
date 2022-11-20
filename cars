@@ -1,18 +1,23 @@
-while wait() do
-    if getgenv().settings['MONEY_FARM'] == true then 
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-39, -2698, 26638)
-        wait(1)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4, 511, 184)
-        wait(1)
-    end
-end
+task.spawn(function(
+    while wait() do
+        if getgenv().settings['MONEY_FARM'] == true then 
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-39, -2698, 26638)
+            wait(1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4, 511, 184)
+            wait(1)
+        end
+end)
 
-while wait() do
-    if getgenv().settings['SERVER_LAGGER'] == true then 
-        local remote = game:GetService("ReplicatedStorage").SpawnCar
-        remote:FireServer(0, "Lada")
-        local remote = game:GetService("ReplicatedStorage").SpawnCar
-        remote:FireServer(0, "Jalopy")
+task.spawn(function(
+    while wait() do
+        if getgenv().settings['SERVER_LAGGER'] == true then 
+            local remote = game:GetService("ReplicatedStorage").SpawnCar
+            remote:FireServer(0, "Lada")
+            local remote = game:GetService("ReplicatedStorage").SpawnCar
+            remote:FireServer(0, "Jalopy")
+        end
     end
-end
-print('d')
+end)
+
+
+print('printed')
