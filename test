@@ -1,1 +1,5 @@
-print('printed')
+while wait() do 
+    if getgenv().settings['MONEY_FARM'] then 
+        print('MONEY_FARM IS TRUE')
+    end
+end
