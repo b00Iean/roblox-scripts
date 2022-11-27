@@ -3,13 +3,14 @@ workspace.Safezone:Destroy()
 
 while wait() do
     if getgenv().settings['GARBAGE_FARM'] == true then 
+        wait(.1)
         fireproximityprompt(workspace["Job 1"].DontDeleteTheseObjects.GetJobPart.ProximityPrompt)
         wait(.3)
         firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, workspace["Job 1"].DontDeleteTheseObjects.TargetPart, 0)
         firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, workspace["Job 1"].DontDeleteTheseObjects.TargetPart, 1)
-        wait(.1)
     end
     if getgenv().settings['BOX_FARM'] == true then 
+        wait(.1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801, 3, -176)
         wait(.1)
         fireclickdetector(workspace["Lower Garage Boxes"].ClickDetector)
@@ -17,6 +18,5 @@ while wait() do
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-878, 3, -252)
         wait(.1)
         fireclickdetector(workspace.MafiaMember.ClickDetector)
-        wait(.1)
     end
 end
