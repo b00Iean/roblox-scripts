@@ -21,6 +21,6 @@ while wait() do
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-875, 4, -255)
         wait(.2)
         fireclickdetector(workspace.MafiaMember.ClickDetector)
-		wait(.2)
+	wait(.2)
     end
 end
