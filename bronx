@@ -1,5 +1,6 @@
 while wait() do
     if getgenv().settings['GARBAGE_FARM'] == true then 
+        wait(.1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1203, 3, -66)
         wait(.1)
         fireproximityprompt(workspace["Job 1"].DontDeleteTheseObjects.GetJobPart.ProximityPrompt)
