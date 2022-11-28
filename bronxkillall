@@ -9,8 +9,8 @@ for i,v in pairs(game.Players:GetPlayers()) do
             0,
             false,
             false,
-			nil,
-			nil,
+	    nil,
+	    nil,
             100,
             100
         }
