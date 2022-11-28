@@ -1,16 +1,17 @@
+if workspace:FindFirstChild('Safezone') then 
+	workspace.Safezone:Destroy()
+    workspace.Safezone:Destroy()
+end
+
 while wait() do
     if getgenv().settings['GARBAGE_FARM'] == true then 
-        wait(.1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1203, 3, -66)
         wait(.1)
         fireproximityprompt(workspace["Job 1"].DontDeleteTheseObjects.GetJobPart.ProximityPrompt)
         wait(.3)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1220, 3, -77)
-        wait(.4)
-        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.Package)
-        wait(.1)
         firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, workspace["Job 1"].DontDeleteTheseObjects.TargetPart, 0)
         firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, workspace["Job 1"].DontDeleteTheseObjects.TargetPart, 1)
+        wait(.1)
     end
     if getgenv().settings['BOX_FARM'] == true then 
         wait(.1)
