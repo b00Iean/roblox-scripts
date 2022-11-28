@@ -1,5 +1,5 @@
 if workspace:FindFirstChild('Safezone') then 
-    workspace.Safezone:Destroy()
+	workspace.Safezone:Destroy()
     workspace.Safezone:Destroy()
 end
 
@@ -14,13 +14,13 @@ while wait() do
         wait(.1)
     end
     if getgenv().settings['BOX_FARM'] == true then 
-        wait(.1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-801, 3, -176)
-        wait(.1)
+        wait(.2)
         fireclickdetector(workspace["Lower Garage Boxes"].ClickDetector)
         wait(.2)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-878, 3, -252)
-        wait(.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-875, 4, -255)
+        wait(.2)
         fireclickdetector(workspace.MafiaMember.ClickDetector)
+		wait(.2)
     end
 end
