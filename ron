@@ -1,1 +1,59 @@
+local country = game.Players.LocalPlayer.leaderstats.Country.Value
+local cities = game.Workspace.Baseplate.Cities
+local resource = 'Oil'
 
+for i,v in pairs(cities[country]:GetChildren()) do
+    if v.Resources.BaseResources:GetAttribute(resource) then
+        local remote = workspace.GameManager.CreateBuilding
+        remote:FireServer({v}, "Mines")
+    end
+end
+
+for i,v in pairs(game.Players:GetPlayers()) do
+    local args = {
+        [1] = v.leaderstats.Country.Value,
+        [2] = "SendRequest"
+    }
+    
+    workspace.GameManager.ManageAlliance:FireServer(unpack(args))
+    wait(.3)
+end
+
+for i,v in pairs(game.Players:GetPlayers()) do
+    local args = {
+        [1] = v.leaderstats.Country.Value,
+        [2] = "SendRequest",
+        [3] = "PuppetRequest"
+    }
+
+    workspace.GameManager.ManageAlliance:FireServer(unpack(args))
+    wait(.3)
+end
+
+local country = game.Players.LocalPlayer.leaderstats.Country.Value
+local cities = game.Workspace.Baseplate.Cities
+
+for i,v in pairs(cities[country]:GetChildren()) do
+    if v.Name then
+		local remote = workspace.GameManager.CreateBuilding
+		remote:FireServer({v}, "Develop City")
+    end
+end
+
+getgenv().esp = game.RunService.Stepped:Connect(function()
+	for i,v in pairs(workspace.Units:GetChildren()) do 
+		if v:FindFirstChild('Tag') then 
+			v.Tag.Enabled = true
+		end
+	end
+end)
+
+getgenv().esp:Disconnect()
+
+
+local server = workspace.ServerID.Value
+setclipboard(([[workspace.Join:FireServer("%s")]]):format(server))
+
+local idpath = game.Players.LocalPlayer.PlayerGui.GameGui.ID.Text
+local id = string.gsub(idpath, "Server ID: ", "")
+setclipboard(id)
