@@ -1,13 +1,13 @@
 local function detector()
     game.Players.PlayerAdded:Connect(function(plr)
-        if not table.find(whitelisted, plr.UserId) then 
+        if not table.find(getgenv().whitelisted, plr.UserId) then 
             game:Shutdown()
         end
     end)
     
     for _, plr in next, game.Players:GetPlayers() do 
         if plr.Name ~= game.Players.LocalPlayer.Name then 
-            if not table.find(whitelisted, plr.UserId) then 
+            if not table.find(getgenv().whitelisted, plr.UserId) then 
                 game:Shutdown()
             end
         end    
