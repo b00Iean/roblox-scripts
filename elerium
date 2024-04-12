@@ -2997,58 +2997,58 @@ function Library:AddWindow(title, Options)
 		}), NewTab
 	end
 
-	function Window_Data:AddSettings(Setting_Opt)
-		Setting_Opt = CheckType(Setting_Opt, "table", {})
+	-- function Window_Data:AddSettings(Setting_Opt)
+	-- 	Setting_Opt = CheckType(Setting_Opt, "table", {})
 
-		Setting_Opt.Rejoin = CheckType(Setting_Opt.Rejoin, "boolean", false)
-		Setting_Opt.MainColor = CheckType(Setting_Opt.MainColor, "boolean", false)
+	-- 	Setting_Opt.Rejoin = CheckType(Setting_Opt.Rejoin, "boolean", false)
+	-- 	Setting_Opt.MainColor = CheckType(Setting_Opt.MainColor, "boolean", false)
 
-		local Settings = Window_Data:AddTab("Settings")
+	-- 	local Settings = Window_Data:AddTab("Settings")
 
-		Settings:AddKeybind("Toggle UI", function(State, Func)
-			NewInstance.Enabled = not State
+	-- 	Settings:AddKeybind("Toggle UI", function(State, Func)
+	-- 		NewInstance.Enabled = not State
 
-			Setting.ToggleKey = Func.Bind
-			writefile("EleriumSettings", HttpService:JSONEncode(Setting))
-		end, {
-			Default = IsKeyCode(Setting.ToggleKey) or IsKeyCode(Default.ToggleKey),
-			Enabled = NewInstance.Enabled,
-		})
+	-- 		Setting.ToggleKey = Func.Bind
+	-- 		writefile("EleriumSettings", HttpService:JSONEncode(Setting))
+	-- 	end, {
+	-- 		Default = IsKeyCode(Setting.ToggleKey) or IsKeyCode(Default.ToggleKey),
+	-- 		Enabled = NewInstance.Enabled,
+	-- 	})
 
-		Settings:AddButton("Destroy UI", function()
-			Resize(NewWindow, {Size = UDim2.new(0, Options.MinSize.X, 0, 0)}, 1)
-			task.wait(1)
-			NewInstance:Destroy()
-		end)
+	-- 	Settings:AddButton("Destroy UI", function()
+	-- 		Resize(NewWindow, {Size = UDim2.new(0, Options.MinSize.X, 0, 0)}, 1)
+	-- 		task.wait(1)
+	-- 		NewInstance:Destroy()
+	-- 	end)
 
-		if Setting_Opt.Rejoin then
-			Settings:AddButton("Rejoin", function()
-				if RobloxReplicatedStorage.GetServerType:InvokeServer() == "StandardServer" then
-					if #Players:GetPlayers() <= 1 then
-						Players.LocalPlayer:Kick("\nRejoining...")
-						TeleportService:Teleport(game.PlaceId)
-					else
-						TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId)
-					end
-				else
-					Notification({
-						Description = ("Can't rejoin, your current server type is %s"):format(RobloxReplicatedStorage.GetServerType:InvokeServer()),
-						Duration = 5
-					})
-				end
-			end)
-		end
+	-- 	if Setting_Opt.Rejoin then
+	-- 		Settings:AddButton("Rejoin", function()
+	-- 			if RobloxReplicatedStorage.GetServerType:InvokeServer() == "StandardServer" then
+	-- 				if #Players:GetPlayers() <= 1 then
+	-- 					Players.LocalPlayer:Kick("\nRejoining...")
+	-- 					TeleportService:Teleport(game.PlaceId)
+	-- 				else
+	-- 					TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId)
+	-- 				end
+	-- 			else
+	-- 				Notification({
+	-- 					Description = ("Can't rejoin, your current server type is %s"):format(RobloxReplicatedStorage.GetServerType:InvokeServer()),
+	-- 					Duration = 5
+	-- 				})
+	-- 			end
+	-- 		end)
+	-- 	end
 
-		if Setting_Opt.MainColor then
-			Settings:AddSeparator()
-			Settings:AddLabel("Main Color")
+	-- 	if Setting_Opt.MainColor then
+	-- 		Settings:AddSeparator()
+	-- 		Settings:AddLabel("Main Color")
 
-			Settings:AddColorPicker(function(Color)
-				Setting.MainColor = Color:ToHex()
+	-- 		Settings:AddColorPicker(function(Color)
+	-- 			Setting.MainColor = Color:ToHex()
 
-				writefile("EleriumSettings.json", HttpService:JSONEncode(Setting))
-			end)
-		end
+	-- 			writefile("EleriumSettings.json", HttpService:JSONEncode(Setting))
+	-- 		end)
+	-- 	end
 	end
 
 	function Window_Data:AddNotification(Notification_Opt)
