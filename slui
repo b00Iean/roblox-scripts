@@ -1,6 +1,8 @@
--- made by dosage, for solaris
+--https://raw.githubusercontent.com/Stebulous/solaris-ui-lib/main/source.lua
+
+-- This User Interface Library is brought to you by Solaris Software.
 local Solaris = Instance.new("ScreenGui")
-Solaris.Name = "Solaris"
+Solaris.Name = "dosage's solaris gui"
 Solaris.Parent = game.CoreGui
 Solaris.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -151,7 +153,7 @@ local SolarisLib = {
     },
     Settings = {
         Theme = "Default",
-        ShowFriendsOnLaunch = false,
+        ShowFriendsOnLaunch = true,
         ShowMusicOnLaunch = false,
         CloseBind = "RightControl"
     },
@@ -162,6 +164,7 @@ local SolarisLib = {
 
 
 local MainUI = game:GetObjects("rbxassetid://7835727566")[1]
+print("SolarisLib Loaded!")
 local function MakeDraggable(topbarobject, object) 
     pcall(function()
 		local dragging, dragInput, mousePos, framePos = false
