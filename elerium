@@ -238,6 +238,7 @@ TextBox.BackgroundColor3 = Color3.new(1, 1, 1)
 TextBox.BackgroundTransparency = 1
 TextBox.BorderSizePixel = 0
 TextBox.Size = UDim2.new(1, 0, 0, 20)
+TextBox.ClearTextOnFocus = false
 TextBox.ZIndex = 2
 TextBox.Font = Enum.Font.GothamSemibold
 TextBox.PlaceholderColor3 = Color3.new(0.698039, 0.698039, 0.698039)
@@ -1053,6 +1054,7 @@ local function Notification(Notification_Opt, Color)
 		task.wait(Notification_Opt.Duration)
 		TweenService:Create(Notification_Main, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Position = UDim2.new(0, -261 - 10, 0.5, -45)}):Play()
 		task.wait(0.5)
+		print('joeski')
 		Notification_Frame:Destroy()
 	end)
 end
