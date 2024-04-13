@@ -63,7 +63,7 @@ end)
 
 -- Instance
 local NewInstance = Instance.new("ScreenGui")
-NewInstance.Name = HttpService:GenerateGUID(false)
+NewInstance.Name = 'DankGui' --HttpService:GenerateGUID(false)
 
 if gethui then
 	NewInstance.Parent = gethui()
