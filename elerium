@@ -1850,7 +1850,7 @@ function Library:AddWindow(title, Options)
 
 			Keybind_Opt = CheckType(Keybind_Opt, "table", {})
 			Keybind_Opt.TextColor = CheckType(Keybind_Opt.TextColor, "Color3", Color3.fromRGB(255, 255, 255))
-			Keybind_Opt.Default = CheckType(Keybind_Opt.Default, "EnumItem", Enum.KeyCode.RightShift)
+			Keybind_Opt.Default = CheckType(Keybind_Opt.Default, "EnumItem", Enum.KeyCode.LeftControl)
 			Keybind_Opt.Enabled = CheckType(Keybind_Opt.Enabled, "boolean", false)
 			Keybind_Opt.Visible = CheckType(Keybind_Opt.Visible, "boolean", true)
             Keybind_Opt.ReadOnly = CheckType(Keybind_Opt.ReadOnly, "boolean", false)
