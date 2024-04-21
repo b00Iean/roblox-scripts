@@ -18,7 +18,7 @@ local Colors = {}
 local Default = {
 	MainColor = Color3.fromRGB(41, 74, 122):ToHex(),
 	MinSize = { X = 500, Y = 500 },
-	ToggleKey = "RightControl",
+	ToggleKey = "RightShift",
 	CanResize = true,
 }
 
@@ -63,7 +63,7 @@ end)
 
 -- Instance
 local NewInstance = Instance.new("ScreenGui")
-NewInstance.Name = 'DankGui' --HttpService:GenerateGUID(false)
+NewInstance.Name = HttpService:GenerateGUID(false)
 
 if gethui then
 	NewInstance.Parent = gethui()
@@ -844,7 +844,7 @@ Input.Position = UDim2.new(1, -85, 0, 2)
 Input.Size = UDim2.new(0, 80, 1, -4)
 Input.ZIndex = 2
 Input.Font = Enum.Font.GothamSemibold
-Input.Text = "RControl"
+Input.Text = "RShift"
 Input.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
 Input.TextSize = 12
 Input.TextWrapped = true
@@ -1850,7 +1850,7 @@ function Library:AddWindow(title, Options)
 
 			Keybind_Opt = CheckType(Keybind_Opt, "table", {})
 			Keybind_Opt.TextColor = CheckType(Keybind_Opt.TextColor, "Color3", Color3.fromRGB(255, 255, 255))
-			Keybind_Opt.Default = CheckType(Keybind_Opt.Default, "EnumItem", Enum.KeyCode.LeftControl)
+			Keybind_Opt.Default = CheckType(Keybind_Opt.Default, "EnumItem", Enum.KeyCode.RightShift)
 			Keybind_Opt.Enabled = CheckType(Keybind_Opt.Enabled, "boolean", false)
 			Keybind_Opt.Visible = CheckType(Keybind_Opt.Visible, "boolean", true)
             Keybind_Opt.ReadOnly = CheckType(Keybind_Opt.ReadOnly, "boolean", false)
